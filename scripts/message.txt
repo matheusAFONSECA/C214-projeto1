@@ -1,7 +1,5 @@
-feat(project): adding entire folder structure
+feat(project): adding JSON with all professors
 
-Adding the complete folder structure,
-including Python module and test files,
-the "data" folder with the base JSON,
-and a "main.sh" script to run the
-entire project.
+Added JSON containing 5 professors along
+with their respective office hours
+and locations.
