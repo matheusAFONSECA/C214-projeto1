@@ -1,5 +1,7 @@
-feat(project): add project scripts
+feat(project): adding script and requirements
 
-Include scripts related to the
-project to enhance functionality
-and streamline processes.
+The project will run in python,
+so we need a requirements.txt to 
+control the versions of librarys.
+Thinking of it, it was added a 
+script to make it.
