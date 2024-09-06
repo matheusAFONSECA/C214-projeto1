@@ -1,7 +1,7 @@
-feat(project): adding script and requirements
+feat(project): adding entire folder structure
 
-The project will run in python,
-so we need a requirements.txt to 
-control the versions of librarys.
-Thinking of it, it was added a 
-script to make it.
+Adding the complete folder structure,
+including Python module and test files,
+the "data" folder with the base JSON,
+and a "main.sh" script to run the
+entire project.
