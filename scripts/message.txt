@@ -1,5 +1,5 @@
-feat(project): add project scripts
+feat(project): adding JSON with all professors
 
-Include scripts related to the
-project to enhance functionality
-and streamline processes.
+Added JSON containing 5 professors along
+with their respective office hours
+and locations.
