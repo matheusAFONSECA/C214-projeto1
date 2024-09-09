@@ -1,5 +1,5 @@
-feat(project): adding JSON with all professors
+feat(project): updating the ReadMe file
 
-Added JSON containing 5 professors along
-with their respective office hours
-and locations.
+Now the ReadMe file contains
+a documentation about the 
+struct of the project.
