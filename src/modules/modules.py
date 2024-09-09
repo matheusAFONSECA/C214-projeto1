@@ -1,0 +1,71 @@
+import json
+
+# Path to your JSON file
+json_file_path = "data/dados.json"
+
+
+def load_json_data(file_path):
+    """
+    Load data from a JSON file.
+
+    Args:
+        file_path (str): The path to the JSON file.
+
+    Returns:
+        dict: Data loaded from the JSON file.
+    """
+    with open(file_path, "r", encoding="utf-8") as file:
+        return json.load(file)
+
+
+def assign_building(room):
+    """
+    Assign a building based on the provided room number.
+
+    Args:
+        room (int): Room number.
+
+    Returns:
+        str: The corresponding building:
+             - "1" for rooms 1 to 5,
+             - "2" for rooms 6 to 10,
+             - "Other" for rooms greater than 10 or less than 1.
+
+    Raises:
+        ValueError: If the room is not an integer.
+    """
+    if not isinstance(room, int):
+        raise ValueError(f"Invalid room: {room}. Must be an integer.")
+
+    if 1 <= room <= 5:
+        return "1"
+    elif 6 <= room <= 10:
+        return "2"
+    else:
+        return "Outro"
+
+
+def process_professor_data(professor_data):
+    """
+    Process professor data, assign the building based on the room, and print the information.
+
+    Args:
+        professor_data (dict): A dictionary containing professor information.
+    """
+    for professor, data in professor_data.items():
+        room = int(data["sala"])
+        building = assign_building(room)
+
+        print(f"Professor: {data['nomeDoProfessor']}")
+        print(f"Office Hours: {data['horarioDeAtendimento']}")
+        print(f"Period: {data['periodo']}")
+        print(f"Room: {room}")
+        print(f"Assigned Building: {building}")
+        print(f"Available Buildings: {', '.join(data['predio'])}")
+        print("-" * 40)
+
+
+if __name__ == "__main__":
+    # Load data from the JSON file and process professor information.
+    professor_data = load_json_data(json_file_path)
+    process_professor_data(professor_data)
