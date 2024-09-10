@@ -1,8 +1,4 @@
-feat(project): creation of 5 tests using office rooms
+feat(project): creation of mock JSON for professor data
 
-Created 5 tests based on office room
-assignments: 4 success scenarios and
-1 failure scenario. Additionally, a
-command was added to the main.sh 
-script to run the tests via the
-terminal using Bash.
+Using mock data to generate JSON for
+professor information.
