@@ -1,4 +1,5 @@
-feat(project): creation of mock JSON for professor data
+feat(project): creating 4 failure tests
 
-Using mock data to generate JSON for
-professor information.
+Created 4 tests of failure
+trying to input anitype of
+variable to a building.

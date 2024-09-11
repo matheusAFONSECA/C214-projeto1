@@ -10,6 +10,8 @@ class TestAtendimento(unittest.TestCase):
     for success and failure scenarios.
     """
 
+    """------------------- Success cases -------------------"""
+
     def test_assign_building_sala_1_a_5(self):
         """
         Success case: Test to assign 1 to 5 to building 1.
@@ -40,12 +42,49 @@ class TestAtendimento(unittest.TestCase):
         self.assertEqual(assign_building(0), "Outro")
         self.assertEqual(assign_building(-5), "Outro")
 
+    """------------------- Failure cases -------------------"""
+
     def test_assign_building_sala_invalida(self):
         """
         Failure case: Test for invalid (non-integer) entry.
         """
         with self.assertRaises(ValueError):
             assign_building("invalid")
+
+    def test_assign_building_com_string_numero(self):
+        """
+        Failure case: Test for string input with a number.
+        """
+        with self.assertRaises(ValueError):
+            assign_building("5")
+
+    def test_assign_building_com_lista(self):
+        """
+        Failure case: Test for input as a list.
+        """
+        with self.assertRaises(ValueError):
+            assign_building([1, 2, 3])
+
+    def test_assign_building_com_dicionario(self):
+        """
+        Failure case: Test for input as a dictionary.
+        """
+        with self.assertRaises(ValueError):
+            assign_building({"sala": 3})
+
+    def test_assign_building_com_none(self):
+        """
+        Failure case: Test for input as None.
+        """
+        with self.assertRaises(ValueError):
+            assign_building(None)
+
+    def test_assign_building_com_numero_flutuante(self):
+        """
+        Failure case: Test for input as a float.
+        """
+        with self.assertRaises(ValueError):
+            assign_building(5.5)
 
 
 if __name__ == "__main__":
