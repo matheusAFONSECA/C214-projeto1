@@ -1,5 +1,5 @@
 import unittest
-from src.modules.modules import assign_building, validate_professor_name
+from src.modules.modules import assign_building
 
 
 class TestAtendimento(unittest.TestCase):
