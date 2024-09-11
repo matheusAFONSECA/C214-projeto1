@@ -43,6 +43,27 @@ def assign_building(room):
         return "2"
     else:
         return "Outro"
+    
+
+def validate_professor_name(name):
+    """
+    Validate if the given professor name is valid and return it.
+
+    Args:
+        name (str): Name of the professor.
+
+    Returns:
+        str: The validated professor name.
+
+    Raises:
+        ValueError: If the name is not a valid string.
+    """
+    if not isinstance(name, str) or not name.strip():
+        raise ValueError("Invalid name: The name must be a non-empty string.")
+    
+    # Additional logic could be added here for further validation if needed
+    return name
+
 
 
 def process_professor_data(professor_data):

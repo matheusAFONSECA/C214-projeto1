@@ -1,5 +1,4 @@
-feat(project): creating 4 failure tests
+feat(project): adding new tests
 
-Created 4 tests of failure
-trying to input anitype of
-variable to a building.
+Created 10 tests to test
+the name of professors.
