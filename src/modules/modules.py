@@ -63,6 +63,9 @@ def validate_professor_name(name):
     if not isinstance(name, str) or not name.strip():
         raise ValueError("Invalid name: The name must be a non-empty string.")
     
+    if any(char.isdigit() for char in name): 
+        raise ValueError("Invalid name: The name cannot contain numbers.")
+    
     # Additional logic could be added here for further validation if needed
     return name
 

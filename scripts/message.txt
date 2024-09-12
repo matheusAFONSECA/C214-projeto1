@@ -1,6 +1,5 @@
 feat(project): adding checks
 
-Adding data checks to
-the assign_building and
-process_professor_data
+Adding data checks to the
+validate_professor_name
 functions.
