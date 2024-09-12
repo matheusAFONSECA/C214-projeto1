@@ -74,3 +74,18 @@ class TestValidateProfessorName(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             validate_professor_name({"name": "Marcelo Cisneyros"})
+    
+    def test_invalid_professor_name_with_numbers(self):
+        """
+        Failure case: Invalid name with numbers in it.
+        """
+        with self.assertRaises(ValueError):
+            validate_professor_name("Marcelo123")
+    
+    def test_invalid_professor_name_tuple(self):
+        """
+        Failure case: Invalid input as a tuple.
+        """
+        with self.assertRaises(ValueError):
+            validate_professor_name(("Marcelo", "Cisneyros"))
+
