@@ -1,5 +1,5 @@
-feat(project): adding checks
+feat(project): creating the class for testing processed_professor_data
 
-Adding data checks to the
-validate_professor_name
-functions.
+Created a new file to test the processed_professor_data,
+as well as creating a new failure test that does not
+include the teacher's name
