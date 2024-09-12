@@ -1,5 +1,4 @@
-feat(project): updating the ReadMe file
+feat(project): creating new tests
 
-Now the ReadMe file contains
-a documentation about the 
-struct of the project.
+Created new tests, the period
+is invalid.
