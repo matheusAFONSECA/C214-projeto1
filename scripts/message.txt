@@ -1,3 +1,6 @@
-feat(project): adding 3 new tests
+feat(project): adding checks
 
-Created 3  Failure case.
+Adding data checks to
+the assign_building and
+process_professor_data
+functions.

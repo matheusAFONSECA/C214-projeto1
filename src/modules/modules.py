@@ -34,6 +34,8 @@ def assign_building(room):
     Raises:
         ValueError: If the room is not an integer.
     """
+    if isinstance(room, bool): 
+        raise ValueError(f"Invalid room: {room}. Cannot be a boolean.")
     if not isinstance(room, int):
         raise ValueError(f"Invalid room: {room}. Must be an integer.")
 
@@ -72,8 +74,21 @@ def process_professor_data(professor_data):
 
     Args:
         professor_data (dict): A dictionary containing professor information.
+
+    Raises:
+        ValueError: If data is empty or period is not a string.
+        TypeError: If 'predio' is not a list.
     """
+    if not professor_data:
+        raise ValueError("Professor data cannot be empty.")
+
     for professor, data in professor_data.items():
+        if not isinstance(data["periodo"], str):
+            raise ValueError(f"Invalid period: {data['periodo']}. Must be a string.")
+
+        if not isinstance(data["predio"], list):
+            raise TypeError(f"Invalid 'predio' type: {data['predio']}. Must be a list.")
+
         room = int(data["sala"])
         building = assign_building(room)
 
@@ -84,6 +99,7 @@ def process_professor_data(professor_data):
         print(f"Assigned Building: {building}")
         print(f"Available Buildings: {', '.join(data['predio'])}")
         print("-" * 40)
+
 
 
 if __name__ == "__main__":
