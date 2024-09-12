@@ -1,5 +1,7 @@
-feat(project): creating the class for testing processed_professor_data
+feat(project): creating new tests
 
-Created a new file to test the processed_professor_data,
-as well as creating a new failure test that does not
-include the teacher's name
+Created new tests, where one
+the room number is written
+and not in full, another
+empty test and the last
+with an invalid building.
