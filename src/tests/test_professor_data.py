@@ -6,7 +6,7 @@ class TestProfessorData(unittest.TestCase):
     """
     Tests for the process_professor_data function.
     """
-    
+
     """------------------- Failure cases -------------------"""
 
     def test_process_professor_data_missing_name(self):
@@ -23,7 +23,7 @@ class TestProfessorData(unittest.TestCase):
         }
         with self.assertRaises(KeyError):
             process_professor_data(incomplete_data)
-            
+
     def test_process_professor_data_invalid_room(self):
         """
         Failure case: Test when 'sala' is invalid (string instead of int).
@@ -58,10 +58,26 @@ class TestProfessorData(unittest.TestCase):
                 "horarioDeAtendimento": "19:30",
                 "periodo": "Noturno",
                 "sala": "3",
-                "predio": "1234",  
+                "predio": "1234",
             }
         }
         with self.assertRaises(TypeError):
+            process_professor_data(invalid_data)
+
+    def test_process_professor_data_invalid_period(self):
+        """
+        Failure case: Test when 'periodo' is invalid (not string).
+        """
+        invalid_data = {
+            "prof1": {
+                "nomeDoProfessor": "Marcelo Cisneyros",
+                "horarioDeAtendimento": "19:30",
+                "periodo": 123,
+                "sala": "3",
+                "predio": ["1", "2", "3", "4", "6"],
+            }
+        }
+        with self.assertRaises(ValueError):
             process_professor_data(invalid_data)
 
 

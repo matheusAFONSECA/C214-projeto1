@@ -1,6 +1,7 @@
 import unittest
 from src.modules.modules import validate_professor_name
- 
+
+
 class TestValidateProfessorName(unittest.TestCase):
     """
     Test cases for the validate_professor_name function.
@@ -12,7 +13,9 @@ class TestValidateProfessorName(unittest.TestCase):
         """
         Success case: Valid common professor name.
         """
-        self.assertEqual(validate_professor_name("Marcelo Cisneyros"), "Marcelo Cisneyros")
+        self.assertEqual(
+            validate_professor_name("Marcelo Cisneyros"), "Marcelo Cisneyros"
+        )
 
     def test_valid_professor_name_with_spaces(self):
         """
@@ -30,13 +33,18 @@ class TestValidateProfessorName(unittest.TestCase):
         """
         Success case: Valid name with special characters.
         """
-        self.assertEqual(validate_professor_name("ThiThi Miguelito!"), "ThiThi Miguelito!")
+        self.assertEqual(
+            validate_professor_name("ThiThi Miguelito!"), "ThiThi Miguelito!"
+        )
 
     def test_valid_professor_name_lowercase(self):
         """
         Success case: Valid lowercase name.
         """
-        self.assertEqual(validate_professor_name("evandro cesar vilas boas"), "evandro cesar vilas boas")
+        self.assertEqual(
+            validate_professor_name("evandro cesar vilas boas"),
+            "evandro cesar vilas boas",
+        )
 
     """------------------- Failure cases -------------------"""
 
@@ -74,18 +82,17 @@ class TestValidateProfessorName(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             validate_professor_name({"name": "Marcelo Cisneyros"})
-    
+
     def test_invalid_professor_name_with_numbers(self):
         """
         Failure case: Invalid name with numbers in it.
         """
         with self.assertRaises(ValueError):
             validate_professor_name("Marcelo123")
-    
+
     def test_invalid_professor_name_tuple(self):
         """
         Failure case: Invalid input as a tuple.
         """
         with self.assertRaises(ValueError):
             validate_professor_name(("Marcelo", "Cisneyros"))
-

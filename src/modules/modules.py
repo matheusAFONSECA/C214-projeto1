@@ -34,7 +34,7 @@ def assign_building(room):
     Raises:
         ValueError: If the room is not an integer.
     """
-    if isinstance(room, bool): 
+    if isinstance(room, bool):
         raise ValueError(f"Invalid room: {room}. Cannot be a boolean.")
     if not isinstance(room, int):
         raise ValueError(f"Invalid room: {room}. Must be an integer.")
@@ -45,7 +45,7 @@ def assign_building(room):
         return "2"
     else:
         return "Outro"
-    
+
 
 def validate_professor_name(name):
     """
@@ -62,13 +62,12 @@ def validate_professor_name(name):
     """
     if not isinstance(name, str) or not name.strip():
         raise ValueError("Invalid name: The name must be a non-empty string.")
-    
-    if any(char.isdigit() for char in name): 
+
+    if any(char.isdigit() for char in name):
         raise ValueError("Invalid name: The name cannot contain numbers.")
-    
+
     # Additional logic could be added here for further validation if needed
     return name
-
 
 
 def process_professor_data(professor_data):
@@ -102,7 +101,6 @@ def process_professor_data(professor_data):
         print(f"Assigned Building: {building}")
         print(f"Available Buildings: {', '.join(data['predio'])}")
         print("-" * 40)
-
 
 
 if __name__ == "__main__":

@@ -85,7 +85,7 @@ class TestAtendimento(unittest.TestCase):
         """
         with self.assertRaises(ValueError):
             assign_building(5.5)
-            
+
     def test_assign_building_boolean(self):
         """
         Failure case: Test for boolean input (True or False).
@@ -94,6 +94,7 @@ class TestAtendimento(unittest.TestCase):
             assign_building(True)
         with self.assertRaises(ValueError):
             assign_building(False)
+
 
 if __name__ == "__main__":
     unittest.main()

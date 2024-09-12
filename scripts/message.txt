@@ -1,7 +1,4 @@
 feat(project): creating new tests
 
-Created new tests, where one
-the room number is written
-and not in full, another
-empty test and the last
-with an invalid building.
+Created new tests, the period
+is invalid.
