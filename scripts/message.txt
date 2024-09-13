@@ -1,4 +1,7 @@
-feat(project): creating new tests
+feat(project): update ReadMe.md
 
-Created new tests, the period
-is invalid.
+Updating ReadMe.md to
+explains how to run the 
+project and the 
+codes/folders presents
+on the project. 
