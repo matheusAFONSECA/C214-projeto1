@@ -33,12 +33,10 @@ graph TD;
     E --> P[modules]
     E --> Q[tests]
 
-    P --> R[__pycache__]
     P --> S[__init__.py]
     P --> T[mock_test.py]
     P --> U[modules.py]
 
-    Q --> V[__pycache__]
     Q --> W[__init__.py]
     Q --> X[test_atendimento.py]
     Q --> Y[test_professor_data.py]
