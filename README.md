@@ -1,6 +1,6 @@
 # C214 - Project 1
 
-Repository dedicated to the first project of the discipline **C214 - Object-Oriented Software Development** at **INATEL**. The project consists of a modularized Python application that includes automation scripts and organized code.
+Repository dedicated to the first project of the discipline **C214 - Software Engineering** at **INATEL**. The project consists of a modularized Python application that includes automation scripts and organized code.
 
 ## Overview
 
@@ -12,41 +12,55 @@ The project folder structure is organized as follows:
 
 ```mermaid
 graph TD;
-    A[/C214-projeto1/]
-    
-    A --> B[scripts/]
-    B --> B1[create_and_activate_venv.sh]
-    B --> B2[update_and_create_requirements.sh]
-    B --> B3[git_commit.sh]
-    B --> B4[message.txt]
-    
-    A --> C[src/]
-    C --> C1[modules/]
-    C1 --> C1a[modules.py]
-    C --> C2[tests/]
-    C2 --> C2a[tests.py]
-    
-    A --> D[data/]
-    D --> D1[dados.json]
-    
-    A --> E[requirements.txt]
+    A[C214-PROJETO1] --> B[data]
+    A --> C[images]
+    A --> D[scripts]
+    A --> E[src]
     A --> F[.gitignore]
-    A --> G[README.md]
-    A --> H[main.sh]
+    A --> G[main.sh]
+    A --> H[README.md]
+    A --> I[requirements.txt]
 
-    A --> I[images/]
-    I --> I1[author_image.png]
+    B --> J[dados.json]
+
+    C --> K[authors.png]
+
+    D --> L[create_and_activate_venv.sh]
+    D --> M[git_commit.sh]
+    D --> N[message.txt]
+    D --> O[update_and_create_requirements.sh]
+
+    E --> P[modules]
+    E --> Q[tests]
+
+    P --> R[__pycache__]
+    P --> S[__init__.py]
+    P --> T[mock_test.py]
+    P --> U[modules.py]
+
+    Q --> V[__pycache__]
+    Q --> W[__init__.py]
+    Q --> X[test_atendimento.py]
+    Q --> Y[test_professor_data.py]
+    Q --> Z[test_professor_name.py]
 ```
 
 ## Folder Explanation
 
-- **scripts/**: Contains utility scripts that automate recurring tasks, such as creating a virtual environment `create_and_activate_venv.sh`, updating and creating the `requirements.txt` file `update_and_create_requirements.sh`, and scripts for Git commits `git_commit.sh`.
+- **scripts/**: Contains utility scripts that automate recurring tasks:
+  - **create_and_activate_venv.sh**: Creates and activates a Python virtual environment. This script installs all necessary dependencies for the development environment, ensuring that libraries are not installed globally, which helps avoid version conflicts.
+  - **update_and_create_requirements.sh**: Automates the process of updating and creating the `requirements.txt` file, which lists all project dependencies. It ensures that `requirements.txt` is always up-to-date with the libraries installed in the virtual environment.
+  - **git_commit.sh**: Facilitates the Git commit process by allowing the user to set a commit message in a file (`message.txt`) and executing the `git commit` command automatically with that message. This streamlines the Git workflow.
 
 - **src/**: Main source code folder. Contains the project modules and tests:
+  - **modules/**: Contains the main application modules:
+    - **modules.py**: This file contains the core modules of the application. It implements the main functionalities of the project used by other parts of the code.
+    - **mock_test.py**: A test module that contains mocks used in unit tests. It simulates the behavior of functions or classes in a controlled manner to test parts of the code in isolation.
+  - **tests/**: Contains unit tests and mocks related to the project:
+    - **test_atendimento.py**, **test_professor_data.py**, **test_professor_name.py**: Unit test files for different parts of the project. They verify that the methods and functionalities of the project are working as expected, helping ensure code stability.
 
-- **modules/**: Contains the main application modules `modules.py`.
-    - **tests/**: Contains unit tests and mocks related to the project `tests.py`.
-    - **data/**: Contains data files, such as a JSON file `dados.json` used by the project.
+- **data/**: Contains data files:
+  - **dados.json**: A JSON file used by the project for data input.
 
 - **requirements.txt**: List of dependencies required to run the project.
 
@@ -54,8 +68,7 @@ graph TD;
 
 - **README.md**: Project documentation file.
 
-- **main.sh**: Main file that starts the tests.
-
+- **main.sh**: A Bash script that serves as the entry point for running tests. It can be configured to execute all tests defined in the files within the `tests` folder.
 
 ## How to Run the Project
 
@@ -97,8 +110,26 @@ Once the virtual environment is activated, install the necessary dependencies by
 pip install -r requirements.txt
 ```
 
+### Running the Tests
+
+#### Running Tests via Terminal
+
+To run the tests directly from the terminal, use the following command:
+
+```bash
+python -m unittest discover -s src/tests
+```
+
+#### Running Tests Using the Provided Script
+
+To run the tests using a script, you can use the following command:
+
+```bash
+./main.sh
+```
+
 ## Authors
 
 ![Autores - Tico e Teco](images/authors.png)
 
-*Tico(Matheus) e Teco(Álvaro) - Aspirantes a Testers nesse projeto, se foi feito certo, só o Chris para decidir.*
+*Tico (Matheus) and Teco (Álvaro) - Aspiring testers in this project. Whether it was done correctly is up to Chris to decide.*

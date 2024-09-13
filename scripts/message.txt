@@ -1,3 +1,7 @@
-feat(project): update requirements.txt
+feat(project): update ReadMe.md
 
-Update requirements.txt.
+Updating ReadMe.md to
+explains how to run the 
+project and the 
+codes/folders presents
+on the project. 
